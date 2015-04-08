@@ -28,4 +28,5 @@ for image_path in glob('jpg/*.jpg'):
 
 	images.append(image)
 
-print images
+with open('images.json', 'w') as f:
+	f.write(json.dumps(images))
