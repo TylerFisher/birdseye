@@ -9,15 +9,15 @@
 
 ### What is this
 
-This is a prototype built during SNDMakes in Washington, D.C. (April 2015). Name TBD.
+This is a prototype built during [SNDMakes](http://www.snd.org/author/sndmakes/) in Washington, D.C. (April 2015). Name TBD.
 
 ### Who are we?
 
-- Tyler Fisher
-- Michael Grant
+- [Tyler Fisher](http://twitter.com/tylrfishr)
+- [Michael Grant](http://twitter.com/mikegrantme)
 - [Kaeti Hinck](http://twitter.com/kaeti)
-- Kevin Koehler
-- Kainaz Amaria
+- [Kevin Koehler](http://twitter.com/kev097)
+- [Kainaz Amaria](http://twitter.com/kainazamaria)
 
 ### The idea
 
@@ -31,12 +31,12 @@ Our hope is that showing a large set of photos will provide important context an
 ### Inspiration
 
 - The iPhone photoroll interface
-- [The Whale Hunt](http://thewhalehunt.org/) 
+- [The Whale Hunt](http://thewhalehunt.org/)
 
 
 ### License
 
-This repo is licensed under an MIT license. You are free to share and to remix this project (as long as you credit us). 
+This repo is licensed under an MIT license. You are free to share and to remix this project (as long as you credit us).
 
 ### Suggestions
 
@@ -49,6 +49,3 @@ To contribute your changes:
 3.  Stage and commit your changes (git commit -am 'description of my changes')
 4.  Push the changes to your fork (git push origin my-branch)
 5.  [Submit a pull request to the parent repo](https://help.github.com/articles/creating-a-pull-request)
-
-
-
