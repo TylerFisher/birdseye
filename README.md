@@ -5,6 +5,7 @@
 **What's in the repo (so far):**
 
 -  **[Features list](https://github.com/TylerFisher/trinidad/blob/master/project%20planning/features.md):** Outlining the must-have and nice-to-have features for the prototype.
+-  **[Basic XMP Parser](https://github.com/TylerFisher/trinidad/blob/master/images/parse_image.py):** Parsing the XMP data stored in an image file and writing it to a Python dict.
 
 ### What is this
 
