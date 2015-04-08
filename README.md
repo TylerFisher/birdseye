@@ -1,5 +1,11 @@
 # SNDMakes, Team Trinidad
 
+### Table of contents
+
+**What's in the repo (so far):**
+
+-  **[Features list](https://github.com/TylerFisher/trinidad/blob/master/project%20planning/features.md):** Outlining the must-have and nice-to-have features for the prototype.
+
 ### What is this
 
 This is a prototype built during SNDMakes in Washington, D.C. (April 2015). Name TBD.
@@ -8,7 +14,7 @@ This is a prototype built during SNDMakes in Washington, D.C. (April 2015). Name
 
 - Tyler Fisher
 - Michael Grant
-- Kaeti Hinck
+- [Kaeti Hinck](http://twitter.com/kaeti)
 - Kevin Koehler
 - Kainaz Amaria
 
