@@ -18,12 +18,13 @@ for image_path in glob('jpg/*.jpg'):
 	dc = xmp[consts.XMP_NS_DC]
 
 	for item in dc:
-		if item[0].startswith('dc:subject') and item[1] != '':
-			image['tags'].append(item[1])
-		if item[0].startswith('dc:description') and item[1] != '' and item[1] != 'x-default':
-			image['caption'] = item[1]
-		if item[0].startswith('dc:creator') and item[1] != '':
-			image['creator'] = item[1]
+		if item[1] != '':
+			if item[0].startswith('dc:subject') :
+				image['tags'].append(item[1])
+			if item[0].startswith('dc:description') and item[1] != 'x-default':
+				image['caption'] = item[1]
+			if item[0].startswith('dc:creator'):
+				image['creator'] = item[1]
 
 	images.append(image)
 
