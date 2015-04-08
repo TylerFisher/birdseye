@@ -17,3 +17,4 @@
 - Captions/annotations on featured photos
 - CSS animations for interface interactions (for filtering, image expanding, etc.)
 - Hover state for thumbnails
+- Clickable tags on photo detail view
