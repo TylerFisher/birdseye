@@ -6,6 +6,8 @@
 
 -  **[Features list](https://github.com/TylerFisher/trinidad/blob/master/project%20planning/features.md):** Outlining the must-have and nice-to-have features for the prototype.
 -  **[Basic XMP Parser](https://github.com/TylerFisher/trinidad/blob/master/images/parse_image.py):** Parsing the XMP data stored in an image file and writing it to a Python dict.
+-  **[Sketches](https://github.com/TylerFisher/trinidad/tree/master/project%20planning/sketches):** From our initial wireframing.
+-  **[Mockups](https://github.com/TylerFisher/trinidad/tree/master/project%20planning/mockups):** Planning layout and design.
 
 ### What is this
 
