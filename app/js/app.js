@@ -7,19 +7,20 @@ var setupIsotope = function() {
 		itemSelector: '.item',
 		layoutMode: 'packery'
 	});
+
+	$isotopeContainer.isotope('on', 'layoutComplete', function(isoInstance, laidOutItems) {
+		initPhotoSwipeFromDOM($('.isotopeContainer'));
+	});
 }
 
 var filterIsotope = function() {
 	var filterClass = $(this).data('filter');
 	$isotopeContainer.isotope({ filter: filterClass });
-	initPhotoSwipeFromDOM($('.isotopeContainer'));
 }
 
 var initPhotoSwipeFromDOM = function(gallerySelector) {
-    // parse slide data (url, title, size ...) from DOM elements 
-    // (children of gallerySelector)
-    var parseThumbnailElements = function(el) {
-        var thumbElements = el.childNodes,
+    var parseThumbnailElements = function($el) {
+        var thumbElements = $el.find('figure:visible'),
             numNodes = thumbElements.length,
             items = [],
             figureEl,
@@ -30,35 +31,34 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         for(var i = 0; i < numNodes; i++) {
 
             figureEl = thumbElements[i]; // <figure> element
+	        // include only element nodes 
+	        if(figureEl.nodeType !== 1) {
+	            continue;
+	        }
 
-            // include only element nodes 
-            if(figureEl.nodeType !== 1) {
-                continue;
-            }
+	        linkEl = figureEl.children[0]; // <a> element
 
-            linkEl = figureEl.children[0]; // <a> element
+	        size = linkEl.getAttribute('data-size').split('x');
 
-            size = linkEl.getAttribute('data-size').split('x');
+	        // create slide object
+	        item = {
+	            src: linkEl.getAttribute('href'),
+	            w: parseInt(size[0], 10),
+	            h: parseInt(size[1], 10)
+	        };
 
-            // create slide object
-            item = {
-                src: linkEl.getAttribute('href'),
-                w: parseInt(size[0], 10),
-                h: parseInt(size[1], 10)
-            };
+	        if(figureEl.children.length > 1) {
+	            // <figcaption> content
+	            item.title = figureEl.children[1].innerHTML; 
+	        }
 
-            if(figureEl.children.length > 1) {
-                // <figcaption> content
-                item.title = figureEl.children[1].innerHTML; 
-            }
+	        if(linkEl.children.length > 0) {
+	            // <img> thumbnail element, retrieving thumbnail url
+	            item.msrc = linkEl.children[0].getAttribute('src');
+	        } 
 
-            if(linkEl.children.length > 0) {
-                // <img> thumbnail element, retrieving thumbnail url
-                item.msrc = linkEl.children[0].getAttribute('src');
-            } 
-
-            item.el = figureEl; // save link to element for getThumbBoundsFn
-            items.push(item);
+	        item.el = figureEl; // save link to element for getThumbBoundsFn
+	        items.push(item);
         }
 
         return items;
@@ -74,76 +74,36 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
-        var eTarget = e.target || e.srcElement;
+        var $this = $(this);
 
         // find root element of slide
-        var clickedListItem = closest(eTarget, function(el) {
-            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
-        });
+        var $clickedListItem = $this.closest('figure');
 
-        if(!clickedListItem) {
+        if(!$clickedListItem) {
             return;
         }
 
         // find index of clicked item by looping through all child nodes
         // alternatively, you may define index via data- attribute
-        var clickedGallery = clickedListItem.parentNode,
-            childNodes = clickedListItem.parentNode.childNodes,
+        var $clickedGallery = $clickedListItem.parent(),
+            childNodes = $clickedListItem.parent().children(),
             numChildNodes = childNodes.length,
             nodeIndex = 0,
             index;
 
         for (var i = 0; i < numChildNodes; i++) {
-            if(childNodes[i].nodeType !== 1) { 
-                continue; 
-            }
-
-            if(childNodes[i] === clickedListItem) {
+            if(childNodes[i] === $clickedListItem[0]) {
                 index = nodeIndex;
                 break;
             }
             nodeIndex++;
         }
 
-
-
         if(index >= 0) {
             // open PhotoSwipe if valid index found
-            openPhotoSwipe( index, clickedGallery );
+            openPhotoSwipe( index, $clickedGallery);
         }
         return false;
-    };
-
-    // parse picture index and gallery index from URL (#&pid=1&gid=2)
-    var photoswipeParseHash = function() {
-        var hash = window.location.hash.substring(1),
-        params = {};
-
-        if(hash.length < 5) {
-            return params;
-        }
-
-        var vars = hash.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            if(!vars[i]) {
-                continue;
-            }
-            var pair = vars[i].split('=');  
-            if(pair.length < 2) {
-                continue;
-            }           
-            params[pair[0]] = pair[1];
-        }
-
-        if(params.gid) {
-            params.gid = parseInt(params.gid, 10);
-        }
-
-        if(!params.hasOwnProperty('pid')) {
-            return params;
-        }
-        params.pid = parseInt(params.pid, 10);
-        return params;
     };
 
     var openPhotoSwipe = function(index, galleryElement, disableAnimation) {
@@ -159,7 +119,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             index: index,
 
             // define gallery index (for URL)
-            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+            galleryUID: galleryElement.data('pswp-uid'),
 
             getThumbBoundsFn: function(index) {
                 // See Options -> getThumbBoundsFn section of documentation for more info
@@ -182,23 +142,15 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
     };
 
     // loop through all gallery elements and bind events
-    var galleryElements = $isotopeContainer.find('figure:visible');
-    console.log(galleryElements.length);
-
-    for(var i = 0, l = galleryElements.length; i < l; i++) {
-        galleryElements[i].setAttribute('data-pswp-uid', i+1);
-        galleryElements[i].onclick = onThumbnailsClick;
-    }
-
-    // Parse URL and open gallery if it contains #&pid=3&gid=1
-    var hashData = photoswipeParseHash();
-    if(hashData.pid > 0 && hashData.gid > 0) {
-        openPhotoSwipe( hashData.pid - 1 ,  galleryElements[ hashData.gid - 1 ], true );
+    var $galleryElements = $isotopeContainer.find('figure');
+    for(var i = 0, l = $galleryElements.length; i < l; i++) {
+    	var $this = $galleryElements.eq(i);
+    	if ($this.css('display') !== 'none') {
+    		$this.attr('data-pswp-uid', i+1);
+    		$this.on('click', onThumbnailsClick);
+    	}
     }
 };
-
-// execute above function
-
 
 $(document).ready(function() {
 	$isotopeContainer = $('.isotope-container');
