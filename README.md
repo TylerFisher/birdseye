@@ -12,6 +12,8 @@
 ### What is this
 ![Bird's Eye logo](/logo-final2.png "Bird's Eye logo")
 
+A living, sortable contact sheet that shows the whole story.
+
 Bird's Eye is a prototype built during [SNDMakes](http://www.snd.org/author/sndmakes/) in Washington, D.C. (April 2015). 
 
 ### Who are we?
