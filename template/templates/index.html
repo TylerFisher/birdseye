@@ -1,20 +1,31 @@
 {% extends '_base.html' %}
 
 {% block content %}
-<h1>Birdseye</h1>
+<h1>This is our photo story thing about Juarez</h1>
+<div class="byline">
+<p>By <span class="name">Team Trinidad</span> | April 9, 2015</p>
 
 <div class="filters">
-    <button class="filter" data-filter="*">All</button>
-    <button class="filter" data-filter=".people">People</button>
-    <button class="filter" data-filter=".places">Places</button>
-    <button class="filter" data-filter=".things">Things</button>
-    <button class="filter" data-filter=".red">Red</button>
-    <button class="filter" data-filter=".blue">Blue</button>
-    <button class="filter" data-filter=".yellow">Yellow</button>
-    <button class="filter" data-filter=".homes">Homes</button>
-    <button class="filter" data-filter=".church">Church</button>
-    <button class="filter" data-filter=".playground">Playground</button>
-    <button class="filter" data-filter=".market">Market</button>
+    <h2>Choose tags to filter different photos</h2>
+
+    <button class="btn filter" data-filter="*">All</button>
+    <button class="btn filter" data-filter="*">Featured</button>
+    
+    <div class="filter-group" data-filter-group="object">
+        <button class="btn filter" data-filter=".people">People</button>
+        <button class="btn filter" data-filter=".things">Things</button>
+    </div>
+    <div class="filter-group" data-filter-group="color">
+        <button class="btn filter" data-filter=".red">Red</button>
+        <button class="btn filter" data-filter=".blue">Blue</button>
+        <button class="btn filter" data-filter=".yellow">Yellow</button>
+    </div>
+    <div class="filter-group" data-filter-group="subject">
+        <button class="btn filter" data-filter=".homes">Homes</button>
+        <button class="btn filter" data-filter=".church">Church</button>
+        <button class="btn filter" data-filter=".playground">Playground</button>
+        <button class="btn filter" data-filter=".market">Market</button>
+    </div>
 </div>
 
 

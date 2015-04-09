@@ -3,14 +3,68 @@
 @import "less/lib/photoswipe";
 @import "less/lib/photoswipe-default-skin";
 
+@merriweather-font-family: "Merriweather", Georgia, serif;
+@open-sans-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+body {
+	margin: 0 auto;
+	max-width: 95%;
+}
+
+h1, h3, h4, h5, h6, p, ul, li, ol {
+	font-family: @merriweather-font-family;
+}
+
+h2, button, label, .byline p {
+	font-family: @open-sans-font-family;
+}
+
+h2 {
+	text-transform: uppercase;
+	color: #999;
+	font-size: 20px;
+}
+
+.name {
+	text-transform: uppercase;
+}
+
+button.btn {
+	background-color: transparent;
+	border: 1px solid #333;
+	border-radius: 50px;
+	width: 120px;
+
+	&:hover, &.active {
+		background-color: #444;
+		color: white;
+	}
+}
+
+.isotope-container {
+}
+
+
 .item {
 	width: 150px;
 	height: auto;
+	.transition(transform 0.25s ease);
+
+	&:hover {
+		-webkit-transform: scale(1.1, 1.1);
+		transform: scale(1.1, 1.1);
+		z-index: 1;
+	}
 }
 
 .item.featured {
 	width: 300px;
 	height: auto;
+	.transition(all 0.25s ease);
+
+	&:hover {
+		-webkit-transform: scale(1.1, 1.1);
+		transform: scale(1.1, 1.1);
+	}
 }
 
 .item img {

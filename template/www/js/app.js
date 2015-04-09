@@ -1,6 +1,7 @@
 var $isotopeContainer;
 var $galleryContainer;
 var $filters;
+var filters = {};
 
 var setupIsotope = function() {
 	$isotopeContainer.isotope({
@@ -10,8 +11,36 @@ var setupIsotope = function() {
 }
 
 var filterIsotope = function() {
-	var filterClass = $(this).data('filter');
-	$isotopeContainer.isotope({ filter: filterClass });
+	var $this = $(this);
+    var $buttonGroup = $this.parents('.filter-group');
+    var filterGroup = $buttonGroup.attr('data-filter-group');
+    var thisFilter = $this.attr('data-filter');
+    // turn on
+    if (!($this.hasClass('active'))) {
+         // set filter for group
+        filters[ filterGroup ] = thisFilter
+
+        $filters.removeClass('active')
+        $this.addClass('active');
+    // turn off
+    } else {
+        filters[ filterGroup ] = '';
+        $this.removeClass('active');
+    }
+
+    if (thisFilter === '*' || thisFilter === 'featured') {
+        $isotopeContainer.isotope({ filter: thisFilter });
+        $filters.removeClass('active');
+        $this.addClass('active');
+    } else {
+        // combine filters
+        var filterValue = '';
+        for ( var prop in filters ) {
+            filterValue += filters[ prop ];
+        }
+        // set filter for Isotope
+        $isotopeContainer.isotope({ filter: filterValue });
+    }
 }
 
 var initPhotoSwipeFromDOM = function(gallerySelector) {
@@ -82,7 +111,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         // find index of clicked item by looping through all child nodes
         // alternatively, you may define index via data- attribute
         var $clickedGallery = $clickedListItem.parent(),
-            childNodes = $clickedListItem.parent().children(),
+            childNodes = $clickedListItem.parent().children().not(':hidden'),
             numChildNodes = childNodes.length,
             nodeIndex = 0,
             index;
