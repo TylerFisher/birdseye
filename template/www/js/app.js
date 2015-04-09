@@ -6,7 +6,7 @@ var filters = {};
 var setupIsotope = function() {
 	$isotopeContainer.isotope({
 		itemSelector: '.item',
-		layoutMode: 'masonry',
+		layoutMode: 'packery',
         transitionDuration: 0
 	});
 }
@@ -29,7 +29,9 @@ var filterIsotope = function() {
         $this.removeClass('active');
     }
 
+    // check the filter that was clicked
     if (thisFilter === '*' || thisFilter === '.featured') {
+        // turn everything off except what was clicked
         for ( var prop in filters ) {
             filters[prop] = '';
         }
@@ -42,12 +44,8 @@ var filterIsotope = function() {
         for ( var prop in filters ) {
             filterValue += filters[ prop ];
         }
-        // set filter for Isotope
         $isotopeContainer.isotope({ filter: filterValue });
     }
-
-    var instance = $isotopeContainer.isotope().data()
-    console.log(instance.isotope.options.filter);
 }
 
 var initPhotoSwipeFromDOM = function(gallerySelector) {
