@@ -10,7 +10,7 @@
 -  **[Mockups](https://github.com/TylerFisher/trinidad/tree/master/project%20planning/mockups):** Planning layout and design.
 
 ### What is this
-![Bird's Eye logo](/logo-final.png "Bird's Eye logo")
+![Bird's Eye logo](/logo-final2.png "Bird's Eye logo")
 
 Bird's Eye is a prototype built during [SNDMakes](http://www.snd.org/author/sndmakes/) in Washington, D.C. (April 2015). 
 
