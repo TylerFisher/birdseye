@@ -1,16 +1,18 @@
 var $isotopeContainer;
+var $galleryContainer;
 var $filters;
 
 var setupIsotope = function() {
 	$isotopeContainer.isotope({
 		itemSelector: '.item',
-		layoutMode: 'masonry'
+		layoutMode: 'packery'
 	});
 }
 
 var filterIsotope = function() {
 	var filterClass = $(this).data('filter');
 	$isotopeContainer.isotope({ filter: filterClass });
+	initPhotoSwipeFromDOM($('.isotopeContainer'));
 }
 
 var initPhotoSwipeFromDOM = function(gallerySelector) {
@@ -44,8 +46,6 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 w: parseInt(size[0], 10),
                 h: parseInt(size[1], 10)
             };
-
-
 
             if(figureEl.children.length > 1) {
                 // <figcaption> content
@@ -182,7 +182,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
     };
 
     // loop through all gallery elements and bind events
-    var galleryElements = $isotopeContainer.find('figure');
+    var galleryElements = $isotopeContainer.find('figure:visible');
+    console.log(galleryElements.length);
 
     for(var i = 0, l = galleryElements.length; i < l; i++) {
         galleryElements[i].setAttribute('data-pswp-uid', i+1);
@@ -201,6 +202,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
 $(document).ready(function() {
 	$isotopeContainer = $('.isotope-container');
+	$galleryContainer = $('.pswp__container');
 	$filters = $('.filter');
 
 	$filters.on('click', filterIsotope);

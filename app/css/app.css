@@ -1,6 +1,12 @@
 .item {
 	width: 200px;
 	height: auto;
+	margin: 5px;
+}
+
+.item.featured {
+	width: 420px;
+	height: auto;
 }
 
 .item img {
