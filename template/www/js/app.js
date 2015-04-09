@@ -2,6 +2,8 @@ var $isotopeContainer;
 var $galleryContainer;
 var $filters;
 var filters = {};
+var $all;
+var $featured;
 
 var setupIsotope = function() {
 	$isotopeContainer.isotope({
@@ -22,6 +24,8 @@ var filterIsotope = function() {
         filters[ filterGroup ] = thisFilter
 
         $buttonGroup.find('.filter').removeClass('active')
+        $all.removeClass('active');
+        $featured.removeClass('active');
         $this.addClass('active');
     // turn off
     } else {
@@ -188,6 +192,8 @@ $(document).ready(function() {
     });
 	$galleryContainer = $('.pswp__container');
 	$filters = $('.filter');
+    $all = $('.all');
+    $featured = $('.featured');
 
 	$filters.on('click', filterIsotope);
     initPhotoSwipeFromDOM($isotopeContainer);
