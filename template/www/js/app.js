@@ -6,7 +6,8 @@ var filters = {};
 var setupIsotope = function() {
 	$isotopeContainer.isotope({
 		itemSelector: '.item',
-		layoutMode: 'masonry'
+		layoutMode: 'masonry',
+        transitionDuration: 0
 	});
 }
 
