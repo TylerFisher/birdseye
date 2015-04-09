@@ -3,8 +3,20 @@
 @import "less/lib/photoswipe";
 @import "less/lib/photoswipe-default-skin";
 
+// Breakpoints
+@screen-mega-above: ~"screen and (min-width: 1440px)";
+@screen-large-above: ~"screen and (min-width: 1201px)";
+@screen-large: ~"screen and (min-width: 1200px)";
+@screen-medium-above: ~"screen and (min-width: 992px)";
+@screen-medium: ~"screen and (max-width: 991px)";
+@screen-small-above: ~"screen and (min-width: 768px)";
+@screen-small: ~"screen and (max-width: 767px)";
+@screen-tiny-above: ~"screen and (min-width: 481px)";
+@screen-tiny: ~"screen and (max-width: 480px)";
+
 @merriweather-font-family: "Merriweather", Georgia, serif;
 @open-sans-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+
 body {
 	margin: 0 auto;
 	max-width: 95%;
@@ -43,10 +55,19 @@ h2 {
 .filter-group {
 	display: inline-block;
 	margin-left: 10px;
+
+	@media @screen-small {
+		display: inline;
+		margin: 0;
+	}
+
 	h6 {
 		font-family: @open-sans-font-family;
 		color: #999;
 		display: inline;
+		@media @screen-small {
+			display: none;
+		}
 	}
 }
 
@@ -62,14 +83,17 @@ button.btn {
 		color: white;
 		box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.50);
 	}
-}
 
-.isotope-container {
+	@media @screen-small {
+		font-size: 11px;
+		width: 75px;
+		margin-bottom: 10px;
+	}
 }
-
 
 .item {
-	width: 150px;
+	width: 25%;
+	max-width: 150px;
 	height: auto;
 	.transition(transform 0.25s ease);
 
@@ -81,7 +105,8 @@ button.btn {
 }
 
 .item.featured {
-	width: 300px;
+	width: 50%;
+	max-width: 300px;
 	height: auto;
 	.transition(all 0.25s ease);
 
