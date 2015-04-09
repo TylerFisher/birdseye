@@ -45,6 +45,9 @@
         <a href="assets/{{ image.filename }}" data-size="1200x800">
             <img src="assets/thumbs/{{ image.filename }}">
         </a>
+        {% if image.caption %}
+        <figcaption>{{ image.caption }}</figcaption>
+        {% endif %}
     </figure>
     {% endfor %}
 </div>
