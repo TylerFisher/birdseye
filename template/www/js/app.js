@@ -156,5 +156,5 @@ $(document).ready(function() {
 	$filters = $('.filter');
 
 	$filters.on('click', filterIsotope);
-    // initPhotoSwipeFromDOM($isotopeContainer);
+    initPhotoSwipeFromDOM($isotopeContainer);
 })
