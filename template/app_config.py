@@ -38,18 +38,18 @@ ASSETS_SLUG = 'trinidad'
 DEPLOYMENT
 """
 PRODUCTION_S3_BUCKET = {
-    'bucket_name': 'apps.npr.org',
-    'region': 'us-east-1'
+    'bucket_name': 'apps.tylerjfisher.com',
+    'region': 'us-west-2'
 }
 
 STAGING_S3_BUCKET = {
-    'bucket_name': 'stage-apps.npr.org',
-    'region': 'us-east-1'
+    'bucket_name': 'stage-tylerjfisher.com',
+    'region': 'us-west-2'
 }
 
 ASSETS_S3_BUCKET = {
-    'bucket_name': 'assets.apps.npr.org',
-    'region': 'us-east-1'
+    'bucket_name': 'assets.tylerjfisher.com',
+    'region': 'us-west-2'
 }
 
 DEFAULT_MAX_AGE = 20
