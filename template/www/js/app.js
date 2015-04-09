@@ -20,7 +20,7 @@ var filterIsotope = function() {
          // set filter for group
         filters[ filterGroup ] = thisFilter
 
-        $filters.removeClass('active')
+        $buttonGroup.find('.filter').removeClass('active')
         $this.addClass('active');
     // turn off
     } else {
@@ -28,7 +28,7 @@ var filterIsotope = function() {
         $this.removeClass('active');
     }
 
-    if (thisFilter === '*' || thisFilter === 'featured') {
+    if (thisFilter === '*' || thisFilter === '.featured') {
         $isotopeContainer.isotope({ filter: thisFilter });
         $filters.removeClass('active');
         $this.addClass('active');
