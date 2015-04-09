@@ -19,7 +19,7 @@ for image_path in glob('jpg/*.jpg'):
 
 	for item in dc:
 		if item[1] != '':
-			if item[0].startswith('dc:subject') :
+			if item[0].startswith('dc:subject'):
 				image['tags'].append(item[1])
 			if item[0].startswith('dc:description') and item[1] != 'x-default':
 				image['caption'] = item[1]

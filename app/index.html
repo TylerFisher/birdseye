@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Birdseye</title>
+
+	<link rel="stylesheet" href="css/lib/photoswipe.css">
+	<link rel="stylesheet" href="css/lib/photoswipe-default-skin.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	<h1>Birdseye</h1>
+	<div class="filters">
+		<button class="filter" data-filter="*">All</button>
+		<button class="filter" data-filter=".people">People</button>
+		<button class="filter" data-filter=".places">Places</button>
+		<button class="filter" data-filter=".objects">Objects</button>
+		<button class="filter" data-filter=".red">Red</button>
+		<button class="filter" data-filter=".blue">Blue</button>
+		<button class="filter" data-filter=".homes">Homes</button>
+	</div>
+
+
+	<div class="isotope-container">
+		<figure class="item people red">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item places blue">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item places homes">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item people red">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item objects blue">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item people homes">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item objects red">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item places blue">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item objects homes">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item people red">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item objects blue">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item places homes">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+		<figure class="item objects blue">
+			<a href="../images/jpg/nprborderlands_0043.jpg" data-size="1200x800">
+				<img src="../images/jpg/nprborderlands_0043.jpg">
+			</a>
+			<figcaption>Caption</figcaption>
+		</figure>
+	</div>
+
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+	    <!-- Background of PhotoSwipe. 
+	         It's a separate element as animating opacity is faster than rgba(). -->
+	    <div class="pswp__bg"></div>
+
+	    <!-- Slides wrapper with overflow:hidden. -->
+	    <div class="pswp__scroll-wrap">
+
+	        <!-- Container that holds slides. 
+	            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+	            Don't modify these 3 pswp__item elements, data is added later on. -->
+	        <div class="pswp__container">
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	        </div>
+
+	        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+	        <div class="pswp__ui pswp__ui--hidden">
+
+	            <div class="pswp__top-bar">
+
+	                <!--  Controls are self-explanatory. Order can be changed. -->
+
+	                <div class="pswp__counter"></div>
+
+	                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+	                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+	                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+	                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+	                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+	                <!-- element will get class pswp__preloader--active when preloader is running -->
+	                <div class="pswp__preloader">
+	                    <div class="pswp__preloader__icn">
+	                      <div class="pswp__preloader__cut">
+	                        <div class="pswp__preloader__donut"></div>
+	                      </div>
+	                    </div>
+	                </div>
+	            </div>
+
+	            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	                <div class="pswp__share-tooltip"></div> 
+	            </div>
+
+	            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+
+	            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+
+	            <div class="pswp__caption">
+	                <div class="pswp__caption__center"></div>
+	            </div>
+
+	        </div>
+
+	    </div>
+
+	</div>
+
+	<script src="js/lib/jquery-1.11.2.min.js"></script>
+	<script src="js/lib/isotope.pkgd.min.js"></script>
+	<script src="js/lib/photoswipe.min.js"></script>
+	<script src="js/lib/photoswipe-ui-default.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

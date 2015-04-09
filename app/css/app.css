@@ -1,0 +1,12 @@
+.item {
+	width: 200px;
+	height: auto;
+}
+
+.item img {
+	width: 100%;
+}
+
+.item figcaption {
+	display: none;
+}
