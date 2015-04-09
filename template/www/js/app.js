@@ -50,6 +50,10 @@ var filterIsotope = function() {
         }
         $isotopeContainer.isotope({ filter: filterValue });
     }
+
+    if ($isotopeContainer.isotope().data().isotope.options.filter === '') {
+        $all.addClass('active');
+    }
 }
 
 var initPhotoSwipeFromDOM = function(gallerySelector) {
