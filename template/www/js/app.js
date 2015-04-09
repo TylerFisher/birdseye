@@ -30,6 +30,9 @@ var filterIsotope = function() {
     }
 
     if (thisFilter === '*' || thisFilter === '.featured') {
+        for ( var prop in filters ) {
+            filters[prop] = '';
+        }
         $isotopeContainer.isotope({ filter: thisFilter });
         $filters.removeClass('active');
         $this.addClass('active');
@@ -42,6 +45,9 @@ var filterIsotope = function() {
         // set filter for Isotope
         $isotopeContainer.isotope({ filter: filterValue });
     }
+
+    var instance = $isotopeContainer.isotope().data()
+    console.log(instance.isotope.options.filter);
 }
 
 var initPhotoSwipeFromDOM = function(gallerySelector) {
