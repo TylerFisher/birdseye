@@ -1,4 +1,4 @@
-# SNDMakes, Team Trinidad
+# SNDMakes, Team Trinidad: Birdseye
 
 ### Table of contents
 
@@ -15,7 +15,7 @@
 
 A living, sortable contact sheet that shows the whole story.
 
-Bird's Eye is a prototype built during [SNDMakes](http://www.snd.org/author/sndmakes/) in Washington, D.C. (April 2015). 
+Bird's Eye is a prototype built during [SNDMakes](http://www.snd.org/author/sndmakes/) in Washington, D.C. (April 2015). See the final presentation [here](https://docs.google.com/presentation/d/1_e6NVZNXBLZdGZdGOQ3cfS1qesOkiKHaydZxr9FrkVs/edit#slide=id.gad8bc852e_1_33).
 
 ### Who are we?
 
