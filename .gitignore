@@ -1,2 +1,5 @@
 template/www/assets
 *.py[co]
+template/www/css/*.css
+template/www/js/*.js
+template/www/index.html

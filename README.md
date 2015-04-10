@@ -8,6 +8,7 @@
 -  **[Basic XMP Parser](https://github.com/TylerFisher/trinidad/blob/master/images/parse_image.py):** Parsing the XMP data stored in an image file and writing it to a Python dict.
 -  **[Sketches](https://github.com/TylerFisher/trinidad/tree/master/project%20planning/sketches):** From our initial wireframing.
 -  **[Mockups](https://github.com/TylerFisher/trinidad/tree/master/project%20planning/mockups):** Planning layout and design.
+-  **[Template](https://github.com/TylerFisher/trinidad/tree/master/template):** An early prototype built off of the [NPR App Template](http://github.com/nprapps/app-template). Follow the README in that folder to install the project.
 
 ### What is this
 ![Bird's Eye logo](/logo-final2.png "Bird's Eye logo")
